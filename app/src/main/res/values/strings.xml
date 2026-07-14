@@ -32,7 +32,8 @@
 
     <string name="main_title">兜底提醒设置</string>
     <string name="label_package">监控应用包名</string>
-    <string name="hint_package">例如 com.xxx.hinurse</string>
+    <string name="hint_package">填包名：com.herenit.mobilenurse</string>
+    <string name="default_target_package">com.herenit.mobilenurse</string>
     <string name="check_boot_start">开机自动启动监控（推荐开启）</string>
     <string name="check_alert_enabled">开启兜底提醒</string>
     <string name="check_sound">响铃</string>

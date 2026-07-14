@@ -3,6 +3,7 @@
     android:id="@+id/root_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/page_bg"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -10,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_title"
+        android:textColor="@color/text_primary"
         android:textSize="20sp"
         android:textStyle="bold"
         android:paddingBottom="8dp" />
@@ -17,7 +19,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_package" />
+        android:text="@string/label_package"
+        android:textColor="@color/text_primary" />
 
     <EditText
         android:id="@+id/edit_package"
@@ -31,36 +34,42 @@
         android:id="@+id/check_boot_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_boot_start" />
+        android:text="@string/check_boot_start"
+        android:textColor="@color/text_primary" />
 
     <CheckBox
         android:id="@+id/check_alert_enabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_alert_enabled" />
+        android:text="@string/check_alert_enabled"
+        android:textColor="@color/text_primary" />
 
     <CheckBox
         android:id="@+id/check_sound"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_sound" />
+        android:text="@string/check_sound"
+        android:textColor="@color/text_primary" />
 
     <CheckBox
         android:id="@+id/check_vibrate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_vibrate" />
+        android:text="@string/check_vibrate"
+        android:textColor="@color/text_primary" />
 
     <CheckBox
         android:id="@+id/check_wake_screen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_wake_screen" />
+        android:text="@string/check_wake_screen"
+        android:textColor="@color/text_primary" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_stay" />
+        android:text="@string/label_stay"
+        android:textColor="@color/text_primary" />
 
     <Spinner
         android:id="@+id/spinner_stay"
@@ -71,13 +80,15 @@
         android:id="@+id/status_keepalive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp" />
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_secondary" />
 
     <TextView
         android:id="@+id/status_listener"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp" />
+        android:paddingBottom="4dp"
+        android:textColor="@color/text_secondary" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -110,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/label_history"
+        android:textColor="@color/text_primary"
         android:textStyle="bold" />
 
     <ListView
@@ -117,7 +129,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:cacheColorHint="#00000000"
+        android:background="@color/page_bg"
+        android:cacheColorHint="@color/page_bg"
+        android:divider="#BDBDBD"
         android:dividerHeight="1dp"
         android:fastScrollEnabled="false"
         android:scrollingCache="false"

@@ -3,6 +3,7 @@
     android:id="@+id/root_permission"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/page_bg"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -10,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/permission_title"
+        android:textColor="@color/text_primary"
         android:textSize="20sp"
         android:textStyle="bold"
         android:paddingBottom="6dp" />
@@ -18,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/permission_intro"
+        android:textColor="@color/text_secondary"
         android:textSize="13sp"
         android:paddingBottom="10dp" />
 
@@ -25,13 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/permission_notification_title"
+        android:textColor="@color/text_primary"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/status_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp" />
+        android:paddingBottom="4dp"
+        android:textColor="@color/text_secondary" />
 
     <Button
         android:id="@+id/btn_open_notification"
@@ -44,13 +49,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/permission_battery_title"
+        android:textColor="@color/text_primary"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/status_battery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp" />
+        android:paddingBottom="4dp"
+        android:textColor="@color/text_secondary" />
 
     <Button
         android:id="@+id/btn_open_battery"
@@ -62,19 +69,22 @@
         android:id="@+id/check_battery_skip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_battery_skip" />
+        android:text="@string/check_battery_skip"
+        android:textColor="@color/text_primary" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/permission_autostart_title"
+        android:textColor="@color/text_primary"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/permission_autostart_desc"
+        android:textColor="@color/text_secondary"
         android:textSize="13sp"
         android:paddingBottom="4dp" />
 
@@ -82,7 +92,8 @@
         android:id="@+id/check_autostart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_autostart_done" />
+        android:text="@string/check_autostart_done"
+        android:textColor="@color/text_primary" />
 
     <Button
         android:id="@+id/btn_open_app_details"

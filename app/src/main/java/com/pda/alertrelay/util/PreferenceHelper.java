@@ -41,7 +41,11 @@ public final class PreferenceHelper {
     }
 
     public static String getTargetPackage(Context context) {
-        return prefs(context).getString(KEY_TARGET_PACKAGE, "");
+        String pkg = prefs(context).getString(KEY_TARGET_PACKAGE, "");
+        if (pkg == null || pkg.trim().isEmpty()) {
+            return context.getString(com.pda.alertrelay.R.string.default_target_package);
+        }
+        return pkg.trim();
     }
 
     public static void setTargetPackage(Context context, String pkg) {

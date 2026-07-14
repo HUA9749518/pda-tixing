@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
 
         historyAdapter = new ArrayAdapter<>(
                 this,
-                android.R.layout.simple_list_item_1,
+                R.layout.item_history,
                 historyLines
         );
         listHistory.setAdapter(historyAdapter);

@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
-        <item name="android:windowBackground">#F5F5F5</item>
+    <!-- 强制浅色高对比，避免联新 NR510 上字看不见 -->
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@color/page_bg</item>
+        <item name="android:colorBackground">@color/page_bg</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:colorForeground">@color/text_primary</item>
+        <item name="android:buttonStyle">@style/LightButton</item>
+        <item name="android:checkboxStyle">@style/LightCheckBox</item>
+        <item name="android:editTextStyle">@style/LightEditText</item>
+    </style>
+
+    <style name="LightButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="LightCheckBox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="LightEditText" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/bg_edit</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 </resources>
