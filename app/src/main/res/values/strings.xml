@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDA消息兜底</string>
+    <string name="foreground_title">消息监控运行中</string>
+
+    <string name="permission_title">权限配置</string>
+    <string name="permission_notification_title">1. 通知使用权</string>
+    <string name="permission_notification_desc">用于读取 Hi护士 等 APP 的系统通知，是兜底提醒的核心权限。</string>
+    <string name="permission_battery_title">2. 忽略电池优化</string>
+    <string name="permission_battery_desc">防止 PDA 省电策略杀死后台监控服务。</string>
+    <string name="permission_autostart_title">3. 厂商自启动（手动）</string>
+    <string name="permission_autostart_desc">请在系统设置中允许本 APP 自启动、后台运行，并在最近任务中锁定。详见 docs/DEPLOYMENT.md。</string>
+    <string name="btn_open_notification">去开启通知使用权</string>
+    <string name="btn_open_battery">去设置电池优化</string>
+    <string name="btn_continue">进入主界面</string>
+    <string name="check_autostart_done">我已完成厂商自启动与白名单设置</string>
+
+    <string name="status_ok">已开启</string>
+    <string name="status_missing">未开启</string>
+    <string name="status_keepalive_on">前台保活：已运行</string>
+    <string name="status_listener_on">通知监听：已连接</string>
+    <string name="status_listener_off">通知监听：未连接</string>
+    <string name="status_listener_no_permission">通知监听：未授权</string>
+    <string name="status_listener_waiting">通知监听：已授权，等待连接</string>
+
+    <string name="main_title">兜底提醒设置</string>
+    <string name="label_package">监控应用包名</string>
+    <string name="hint_package">例如 com.xxx.hinurse</string>
+    <string name="check_alert_enabled">开启兜底提醒</string>
+    <string name="check_sound">响铃</string>
+    <string name="check_vibrate">振动</string>
+    <string name="check_wake_screen">锁屏亮屏</string>
+    <string name="label_stay">通知停留</string>
+    <string name="btn_save">保存设置</string>
+    <string name="btn_test">测试兜底通知</string>
+    <string name="btn_clear_history">清空记录</string>
+    <string name="btn_permissions">重新配置权限</string>
+    <string name="label_history">最近记录（最多20条）</string>
+    <string name="history_empty">暂无记录</string>
+    <string name="saved">已保存</string>
+    <string name="warning">提示</string>
+    <string name="warning_empty_package">已开启兜底提醒但未填写监控包名，请填写 Hi护士 的实际包名。</string>
+
+    <string-array name="stay_duration_labels">
+        <item>30 秒后消失</item>
+        <item>60 秒后消失</item>
+        <item>手动清除</item>
+    </string-array>
+</resources>
