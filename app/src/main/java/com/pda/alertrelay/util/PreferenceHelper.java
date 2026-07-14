@@ -10,7 +10,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public final class PreferenceHelper {
@@ -24,6 +23,7 @@ public final class PreferenceHelper {
     public static final String KEY_WAKE_SCREEN_ENABLED = "wake_screen_enabled";
     public static final String KEY_STAY_DURATION = "stay_duration";
     public static final String KEY_AUTOSTART_GUIDE_DONE = "autostart_guide_done";
+    public static final String KEY_BATTERY_SKIPPED = "battery_skipped";
     public static final String KEY_HISTORY = "history_json";
 
     public static final int STAY_MANUAL = 0;
@@ -93,6 +93,14 @@ public final class PreferenceHelper {
 
     public static void setAutostartGuideDone(Context context, boolean done) {
         prefs(context).edit().putBoolean(KEY_AUTOSTART_GUIDE_DONE, done).apply();
+    }
+
+    public static boolean isBatterySkipped(Context context) {
+        return prefs(context).getBoolean(KEY_BATTERY_SKIPPED, false);
+    }
+
+    public static void setBatterySkipped(Context context, boolean skipped) {
+        prefs(context).edit().putBoolean(KEY_BATTERY_SKIPPED, skipped).apply();
     }
 
     public static void addHistoryRecord(Context context, AlertRecord record) {

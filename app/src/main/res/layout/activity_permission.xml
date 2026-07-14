@@ -15,8 +15,15 @@
             android:text="@string/permission_title"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_intro"
             android:paddingBottom="16dp" />
 
+        <!-- 1. 通知使用权（必须） -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_open_notification" />
 
+        <!-- 2. 电池优化（可跳过） -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,6 +74,13 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_open_battery" />
 
+        <CheckBox
+            android:id="@+id/check_battery_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check_battery_skip" />
+
+        <!-- 3. 自启动（可确认/跳过） -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,17 +94,31 @@
             android:text="@string/permission_autostart_desc"
             android:paddingBottom="8dp" />
 
+        <Button
+            android:id="@+id/btn_open_autostart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_open_autostart" />
+
         <CheckBox
             android:id="@+id/check_autostart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/check_autostart_done" />
 
+        <!-- 通用跳转 -->
+        <Button
+            android:id="@+id/btn_open_app_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/btn_open_app_details" />
+
         <Button
             android:id="@+id/btn_continue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/btn_continue" />
 
     </LinearLayout>
