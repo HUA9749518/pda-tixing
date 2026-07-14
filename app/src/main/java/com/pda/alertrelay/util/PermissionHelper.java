@@ -177,7 +177,7 @@ public final class PermissionHelper {
             return "请设置电池优化，或勾选「本机无此项，跳过」";
         }
         if (!PreferenceHelper.isAutostartGuideDone(context)) {
-            return "请尝试打开自启动页，或勾选「已完成/跳过」";
+            return "请勾选「已知悉，可进入主界面」";
         }
         return "请完成权限配置";
     }
