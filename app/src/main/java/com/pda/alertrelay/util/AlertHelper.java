@@ -91,6 +91,14 @@ public final class AlertHelper {
                 PendingIntent.FLAG_UPDATE_CURRENT
         );
 
+        int defaults = Notification.DEFAULT_LIGHTS;
+        if (PreferenceHelper.isSoundEnabled(context)) {
+            defaults |= Notification.DEFAULT_SOUND;
+        }
+        if (PreferenceHelper.isVibrateEnabled(context)) {
+            defaults |= Notification.DEFAULT_VIBRATE;
+        }
+
         Notification.Builder builder = new Notification.Builder(context)
                 .setSmallIcon(R.drawable.ic_notification)
                 .setContentTitle("[兜底] " + title)
@@ -100,16 +108,14 @@ public final class AlertHelper {
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setPriority(Notification.PRIORITY_MAX)
-                .setDefaults(Notification.DEFAULT_LIGHTS)
+                .setDefaults(defaults)
                 .setVisibility(Notification.VISIBILITY_PUBLIC);
 
         if (PreferenceHelper.isSoundEnabled(context)) {
-            builder.setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS);
             Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             builder.setSound(sound);
         }
         if (PreferenceHelper.isVibrateEnabled(context)) {
-            builder.setDefaults(builder.getDefaults() | Notification.DEFAULT_VIBRATE);
             builder.setVibrate(VIBRATE_PATTERN);
         }
 
