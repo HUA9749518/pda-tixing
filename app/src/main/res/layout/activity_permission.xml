@@ -1,125 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_permission"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="12dp">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="@string/permission_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="6dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_title"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:paddingBottom="8dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/permission_intro"
+        android:textSize="13sp"
+        android:paddingBottom="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_intro"
-            android:paddingBottom="16dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/permission_notification_title"
+        android:textStyle="bold" />
 
-        <!-- 1. 通知使用权（必须） -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_notification_title"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/status_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_notification_desc"
-            android:paddingBottom="4dp" />
+    <Button
+        android:id="@+id/btn_open_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_open_notification" />
 
-        <TextView
-            android:id="@+id/status_notification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="8dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/permission_battery_title"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_open_notification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_open_notification" />
+    <TextView
+        android:id="@+id/status_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp" />
 
-        <!-- 2. 电池优化（可跳过） -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/permission_battery_title"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btn_open_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_open_battery" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_battery_desc"
-            android:paddingBottom="4dp" />
+    <CheckBox
+        android:id="@+id/check_battery_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check_battery_skip" />
 
-        <TextView
-            android:id="@+id/status_battery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="8dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/permission_autostart_title"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_open_battery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_open_battery" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/permission_autostart_desc"
+        android:textSize="13sp"
+        android:paddingBottom="4dp" />
 
-        <CheckBox
-            android:id="@+id/check_battery_skip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/check_battery_skip" />
+    <CheckBox
+        android:id="@+id/check_autostart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check_autostart_done" />
 
-        <!-- 3. 自启动（可确认/跳过） -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/permission_autostart_title"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btn_open_app_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_open_app_details" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/permission_autostart_desc"
-            android:paddingBottom="8dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btn_open_autostart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_open_autostart" />
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_continue" />
 
-        <CheckBox
-            android:id="@+id/check_autostart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/check_autostart_done" />
-
-        <!-- 通用跳转 -->
-        <Button
-            android:id="@+id/btn_open_app_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/btn_open_app_details" />
-
-        <Button
-            android:id="@+id/btn_continue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/btn_continue" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

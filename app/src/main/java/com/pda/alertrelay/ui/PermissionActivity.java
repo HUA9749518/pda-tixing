@@ -28,6 +28,11 @@ public class PermissionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_permission);
 
+        View root = findViewById(R.id.root_permission);
+        if (root != null) {
+            root.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+
         statusNotification = findViewById(R.id.status_notification);
         statusBattery = findViewById(R.id.status_battery);
         checkBatterySkip = findViewById(R.id.check_battery_skip);
@@ -35,7 +40,6 @@ public class PermissionActivity extends Activity {
 
         Button btnNotification = findViewById(R.id.btn_open_notification);
         Button btnBattery = findViewById(R.id.btn_open_battery);
-        Button btnAutostart = findViewById(R.id.btn_open_autostart);
         Button btnAppDetails = findViewById(R.id.btn_open_app_details);
         Button btnContinue = findViewById(R.id.btn_continue);
 
@@ -50,14 +54,6 @@ public class PermissionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 PermissionHelper.requestIgnoreBatteryOptimizations(PermissionActivity.this);
-            }
-        });
-
-        btnAutostart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PermissionHelper.tryOpenAutostartSettings(PermissionActivity.this);
-                Toast.makeText(PermissionActivity.this, R.string.toast_autostart_opened, Toast.LENGTH_LONG).show();
             }
         });
 

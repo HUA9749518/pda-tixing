@@ -4,24 +4,22 @@
     <string name="foreground_title">消息监控运行中</string>
 
     <string name="permission_title">权限配置</string>
-    <string name="permission_intro">请尽量在本页用按钮跳转设置。仅「通知使用权」为必须项；找不到电池/自启动菜单时可勾选跳过。</string>
+    <string name="permission_intro">仅「通知使用权」必须。电池找不到可勾选跳过；开机自启请在主界面开关（无需进系统权限页）。适配联新 NR510。</string>
 
     <string name="permission_notification_title">1. 通知使用权（必须）</string>
-    <string name="permission_notification_desc">用于读取 Hi护士 等 APP 的系统通知，是兜底提醒的核心权限。点下方按钮后在系统列表中开启「PDA消息兜底」。</string>
+    <string name="permission_notification_desc">点下方按钮，开启「PDA消息兜底」。</string>
     <string name="permission_battery_title">2. 忽略电池优化（建议）</string>
-    <string name="permission_battery_desc">防止 PDA 省电策略杀死后台。若点按钮无反应或本机无此项，可勾选跳过。</string>
-    <string name="permission_autostart_title">3. 自启动 / 后台白名单（建议）</string>
-    <string name="permission_autostart_desc">点下方按钮尝试打开厂商自启动页。若本机没有该菜单，请将本 APP 在「最近任务」中锁定，并勾选「已完成/跳过」。</string>
+    <string name="permission_battery_desc">无此项请勾选跳过。</string>
+    <string name="permission_autostart_title">3. 确认说明（建议）</string>
+    <string name="permission_autostart_desc">系统「权限」灰色是正常的。开机自启在主界面设置。建议锁定最近任务，下方勾选后可进入。</string>
 
     <string name="btn_open_notification">打开通知使用权设置</string>
     <string name="btn_open_battery">申请忽略电池优化</string>
-    <string name="btn_open_autostart">尝试打开自启动设置</string>
-    <string name="btn_open_app_details">打开本应用详情（通用）</string>
+    <string name="btn_open_app_details">打开本应用详情</string>
     <string name="btn_continue">进入主界面</string>
     <string name="check_battery_skip">本机无电池优化项，跳过</string>
-    <string name="check_autostart_done">已完成自启动/锁定，或本机无此项可跳过</string>
-    <string name="toast_autostart_opened">已尝试打开设置页，请在列表中允许本应用</string>
-    <string name="toast_lock_recent">提示：在最近任务中下拉/长按锁定本应用，保活更稳</string>
+    <string name="check_autostart_done">已知悉，可进入主界面</string>
+    <string name="toast_lock_recent">建议在最近任务中锁定本应用</string>
 
     <string name="status_ok">状态：已开启</string>
     <string name="status_missing">状态：未开启</string>
@@ -35,6 +33,7 @@
     <string name="main_title">兜底提醒设置</string>
     <string name="label_package">监控应用包名</string>
     <string name="hint_package">例如 com.xxx.hinurse</string>
+    <string name="check_boot_start">开机自动启动监控（推荐开启）</string>
     <string name="check_alert_enabled">开启兜底提醒</string>
     <string name="check_sound">响铃</string>
     <string name="check_vibrate">振动</string>

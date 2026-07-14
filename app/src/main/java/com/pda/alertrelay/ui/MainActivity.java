@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.pda.alertrelay.util.PermissionHelper;
 import com.pda.alertrelay.util.PreferenceHelper;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -29,6 +31,7 @@ import java.util.Locale;
 public class MainActivity extends Activity {
 
     private EditText editPackage;
+    private CheckBox checkBootStart;
     private CheckBox checkAlertEnabled;
     private CheckBox checkSound;
     private CheckBox checkVibrate;
@@ -36,7 +39,9 @@ public class MainActivity extends Activity {
     private Spinner spinnerStay;
     private TextView statusKeepAlive;
     private TextView statusListener;
-    private TextView textHistory;
+    private ListView listHistory;
+    private ArrayAdapter<String> historyAdapter;
+    private final List<String> historyLines = new ArrayList<>();
 
     private final SimpleDateFormat timeFormat =
             new SimpleDateFormat("MM-dd HH:mm:ss", Locale.getDefault());
@@ -52,6 +57,12 @@ public class MainActivity extends Activity {
         }
 
         setContentView(R.layout.activity_main);
+
+        View root = findViewById(R.id.root_main);
+        if (root != null) {
+            root.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+
         bindViews();
         loadSettings();
         bindActions();
@@ -72,6 +83,7 @@ public class MainActivity extends Activity {
 
     private void bindViews() {
         editPackage = findViewById(R.id.edit_package);
+        checkBootStart = findViewById(R.id.check_boot_start);
         checkAlertEnabled = findViewById(R.id.check_alert_enabled);
         checkSound = findViewById(R.id.check_sound);
         checkVibrate = findViewById(R.id.check_vibrate);
@@ -79,11 +91,20 @@ public class MainActivity extends Activity {
         spinnerStay = findViewById(R.id.spinner_stay);
         statusKeepAlive = findViewById(R.id.status_keepalive);
         statusListener = findViewById(R.id.status_listener);
-        textHistory = findViewById(R.id.text_history);
+        listHistory = findViewById(R.id.list_history);
+
+        historyAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                historyLines
+        );
+        listHistory.setAdapter(historyAdapter);
+        listHistory.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
     private void loadSettings() {
         editPackage.setText(PreferenceHelper.getTargetPackage(this));
+        checkBootStart.setChecked(PreferenceHelper.isBootStartEnabled(this));
         checkAlertEnabled.setChecked(PreferenceHelper.isAlertEnabled(this));
         checkSound.setChecked(PreferenceHelper.isSoundEnabled(this));
         checkVibrate.setChecked(PreferenceHelper.isVibrateEnabled(this));
@@ -153,6 +174,7 @@ public class MainActivity extends Activity {
 
     private void saveSettings() {
         PreferenceHelper.setTargetPackage(this, editPackage.getText().toString());
+        PreferenceHelper.setBootStartEnabled(this, checkBootStart.isChecked());
         PreferenceHelper.setAlertEnabled(this, checkAlertEnabled.isChecked());
         PreferenceHelper.setSoundEnabled(this, checkSound.isChecked());
         PreferenceHelper.setVibrateEnabled(this, checkVibrate.isChecked());
@@ -182,21 +204,22 @@ public class MainActivity extends Activity {
     }
 
     private void refreshHistory() {
+        historyLines.clear();
         List<AlertRecord> records = PreferenceHelper.getHistory(this);
         if (records.isEmpty()) {
-            textHistory.setText(R.string.history_empty);
-            return;
+            historyLines.add(getString(R.string.history_empty));
+        } else {
+            for (AlertRecord record : records) {
+                historyLines.add(
+                        timeFormat.format(new Date(record.timestamp))
+                                + "  "
+                                + record.title
+                                + "\n"
+                                + record.text
+                );
+            }
         }
-        StringBuilder sb = new StringBuilder();
-        for (AlertRecord record : records) {
-            sb.append(timeFormat.format(new Date(record.timestamp)))
-                    .append("  ")
-                    .append(record.title)
-                    .append("\n")
-                    .append(record.text)
-                    .append("\n\n");
-        }
-        textHistory.setText(sb.toString());
+        historyAdapter.notifyDataSetChanged();
     }
 
     @Override
